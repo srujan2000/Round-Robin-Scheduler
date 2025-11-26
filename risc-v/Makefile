@@ -9,6 +9,7 @@ all:
 
 objdump:
 	$(OBJDUMP) -h main.elf >> objdump.txt
+	$(OBJDUMP) -D -s main.elf >> final.lst
 
 qemu:
 	qemu-system-riscv32 -S -nographic -machine virt -bios none -kernel main.elf -gdb tcp::1234
@@ -18,4 +19,4 @@ gdb:
 
 .PHONY:clean
 clean:
-	rm *.elf *.map .gdb_history
+	rm *.elf *.map .gdb_history *.lst 

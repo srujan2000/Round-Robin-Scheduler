@@ -33,18 +33,17 @@ interrupt_handler:
     add t0,x0,x0
     add t1,x0,x0
     add t2,x0,x0
-
-    lw t0,0(sp)
-    lw t1,4(sp)
-    lw t2,8(sp)
     
-
+    la t0,task1
+    lw ra,0(t0)
+    
     #push to the stack
     #pop the the stack
     #copy pc to mepc
-    mret
+    ret
 
-
+.section .text
 task1:
     addi a0,a0,1
     j task1
+
