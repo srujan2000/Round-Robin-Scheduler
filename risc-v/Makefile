@@ -19,4 +19,4 @@ gdb:
 
 .PHONY:clean
 clean:
-	rm *.elf *.map .gdb_history *.lst 
+	rm *.elf *.map .gdb_history *.lst objdump.txt
